@@ -1,0 +1,592 @@
+/data/user/0/org.qpython.qpy3/files/bin/qpython3-android5.sh  /storage/emulated/0/qpython/.last_tmp.py  && exit
+thon3-android5.sh  /storage/emulated/0/qpython/.last_tmp.py  && exit                  <
+Help on package androidhelper:
+
+NAME
+    androidhelper
+
+MODULE REFERENCE
+    https://docs.python.org/3.6/library/androidhelper
+
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    #-------------------------------------------------------------------------------
+    # Name:         androidhelper.py
+    #
+    # Purpose:      To simplify Python-for-Android SL4A development in IDEs with a
+    #               "hepler" class derived from the default Android class containing
+    #               SL4A facade functions & API documentation
+    #
+    # Usage:        copy androidhelper.py into either the folder containing your
+    #               SL4A python script or to some location on the python import path
+    #               that your IDE can see and in your script, instead of:
+    #
+    #                   import android
+    #
+    #               use the following import code:
+    #
+    #                   try:
+    #                       import androidhelper as android
+    #                   except:
+    #                       import android
+    #
+    # Sources:      Derived from API documentation in HTML files contained in
+    #               /android-scripting/android/ScriptingLayerForAndroid/assets/sl4adoc.z
+ip
+    #
+    # Version:      for SL4A Release R5, created on 7-Apr-2012
+    #
+    # Author(s):    Hariharan Srinath (srinathdevelopment@gmail.com) with inputs
+    #               from Robbie Matthews (rjmatthews62@gmail.com)
+    #
+    # Copyright:    Copyright (C) 2012, Hariharan Srinath, Robbie Matthews
+    #
+    # Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    # use this file except in compliance with the License. You may obtain a copy of
+    # the License at
+    #
+    # http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    # License for the specific language governing permissions and limitations under
+    # the License.
+
+PACKAGE CONTENTS
+    sl4a
+
+CLASSES
+    androidhelper.sl4a.Android(builtins.object)
+        Android
+
+    class Android(androidhelper.sl4a.Android)
+     |  Method resolution order:
+     |      Android
+     |      androidhelper.sl4a.Android
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  addContextMenuItem(self, label, event, eventData=None)
+     |
+     |  addOptionsMenuItem(self, label, event, eventData=None, iconName=None)
+     |
+     |  batteryCheckPresent(self)
+     |
+     |  batteryGetHealth(self)
+     |
+     |  batteryGetLevel(self)
+     |
+     |  batteryGetPlugType(self)
+     |
+     |  batteryGetStatus(self)
+     |
+     |  batteryGetTechnology(self)
+     |
+     |  batteryGetTemperature(self)
+     |
+     |  batteryGetVoltage(self)
+     |
+     |  batteryStartMonitoring(self)
+     |
+     |  batteryStopMonitoring(self)
+     |
+     |  bluetoothAccept(self, uuid='457807c0-4897-11df-9879-0800200c9a66', timeout=0)
+     |
+     |  bluetoothActiveConnections(self)
+     |
+     |  bluetoothConnect(self, uuid='457807c0-4897-11df-9879-0800200c9a66', address=None)
+     |
+     |  bluetoothGetConnectedDeviceeName(self, connID=None)
+     |
+     |  bluetoothGetLocalName(self)
+     |
+     |  bluetoothGetRemoteDeviceNamme(self, address)
+     |
+     |  bluetoothGetScanMode(self)
+     |
+     |  bluetoothMakeDiscoverable(self, duration=300)
+     |
+     |  bluetoothRead(self, bufferSize=4096, connID=None)
+     |
+     |  bluetoothReadBinary(self, bufferSize=4096, connID=None)
+     |
+     |  bluetoothReadLine(self, connID=None)
+     |
+     |  bluetoothReadReady(self, connID=None)
+     |
+     |  bluetoothSetLocalName(self, name)
+     |
+     |  bluetoothStop(self, connID=None)
+     |
+     |  bluetoothWrite(self, ascii, connID='')
+     |
+     |  bluetoothWriteBinary(self, base64, connID=None)
+     |
+     |  cameraCapturePicture(self, targetPath, useAutoFocus=True)
+     |
+     |  cameraInteractiveCapturePiccture(self, targetPath)
+     |
+     |  cameraStartPreview(self, resolutionLevel=0,jpegQuality=20, filepath=None)
+     |
+     |  cameraStopPreview(self)
+     |
+     |  checkAirplaneMode(self)
+     |
+     |  checkBluetoothState(self)
+     |
+     |  checkNetworkRoaming(self)
+     |
+     |  checkRingerSilentMode(self)
+     |
+     |  checkScreenOn(self)
+     |
+     |  checkWifiState(self)
+     |
+     |  clearContextMenu(self)
+     |
+     |  clearOptionsMenu(self)
+     |
+     |  contactsGet(self, attributes=None)
+     |
+     |  contactsGetAttributes(self)
+     |
+     |  contactsGetById(self, id, attributes=None)
+     |
+     |  contactsGetCount(self)
+     |
+     |  contactsGetIds(self)
+     |
+     |  dialogCreateAlert(self, title=None, message=None)
+     |
+     |  dialogCreateDatePicker(self, year=1970, month=1, day=1)
+     |
+     |  dialogCreateHorizontalProgrress(self, title=None, message=None, maximum_progress=100)
+     |
+     |  dialogCreateInput(self, title='Value', message='Please enter value:', defaultText=None, inputType=None)
+     |
+     |  dialogCreatePassword(self, title='Password', message='Please enter password:')
+     |
+     |  dialogCreateSeekBar(self, starting_value=50, maximum_value=100, title='', message='')
+     |
+     |  dialogCreateSpinnerProgresss(self, title=None, message=None, maximum_progress=100)
+     |
+     |  dialogCreateTimePicker(self, hour=0, minute=0, is24hour=False)
+     |
+     |  dialogDismiss(self)
+     |
+     |  dialogGetInput(self, title='Value', message='Pleaseenter value:', defaultText=None)
+     |
+     |  dialogGetPassword(self, title='Password', message='Please enter password:')
+     |
+     |  dialogGetResponse(self)
+     |
+     |  dialogGetSelectedItems(self)
+     |
+     |  dialogSetCurrentProgress(self, current)
+     |
+     |  dialogSetItems(self, items)
+     |
+     |  dialogSetMaxProgress(self, max)
+     |
+     |  dialogSetMultiChoiceItems(self, items, selected=None)
+     |
+     |  dialogSetNegativeButtonTextt(self, text)
+     |
+     |  dialogSetNeutralButtonText(self, text)
+     |
+     |  dialogSetPositiveButtonTextt(self, text)
+     |
+     |  dialogSetSingleChoiceItems(self, items, selected=0)
+     |
+     |  dialogShow(self)
+     |
+     |  environment(self)
+     |
+     |  eventClearBuffer(self)
+     |
+     |  eventGetBrodcastCategories(self)
+     |
+     |  eventPoll(self, number_of_events=1)
+     |
+     |  eventPost(self, name, data, enqueue=None)
+     |
+     |  eventRegisterForBroadcast(self, category, enqueue=True)
+     |
+     |  eventUnregisterForBroadcastt(self, category)
+     |
+     |  eventWait(self, timeout=None)
+     |
+     |  eventWaitFor(self, eventName, timeout=None)
+     |
+     |  forceStopPackage(self, packageName)
+     |
+     |  fullDismiss(self)
+     |
+     |  fullQuery(self)
+     |
+     |  fullQueryDetail(self, id)
+     |
+     |  fullSetList(self, id, list)
+     |
+     |  fullSetProperty(self, id, property, value)
+     |
+     |  fullShow(self, layout)
+     |
+     |  generateDtmfTones(self, phoneNumber, toneDuration=100)
+     |
+     |  geocode(self, latitude, longitude, maxResults=1)
+     |
+     |  getCellLocation(self)
+     |
+     |  getClipboard(self)
+     |
+     |  getConstants(self, classname)
+     |
+     |  getDeviceId(self)
+     |
+     |  getDeviceSoftwareVersion(self)
+     |
+     |  getInput(self, title='SL4A Input', message='Please enter value:')
+     |
+     |  getIntent(self)
+     |
+     |  getLastKnownLocation(self)
+     |
+     |  getLaunchableApplications(self)
+     |
+     |  getLine1Number(self)
+     |
+     |  getMaxMediaVolume(self)
+     |
+     |  getMaxRingerVolume(self)
+     |
+     |  getMediaVolume(self)
+     |
+     |  getNeighboringCellInfo(self)
+     |
+     |  getNetworkOperator(self)
+     |
+     |  getNetworkOperatorName(self)
+     |
+     |  getNetworkType(self)
+     |
+     |  getPackageVersion(self, packageName)
+     |
+     |  getPackageVersionCode(self, packageName)
+     |
+     |  getPassword(self, title='SL4A Password Input', message='Please enter password:')
+     |
+     |  getPhoneType(self)
+     |
+     |  getRingerVolume(self)
+     |
+     |  getRunningPackages(self)
+     |
+     |  getScreenBrightness(self)
+     |
+     |  getScreenTimeout(self)
+     |
+     |  getSimCountryIso(self)
+     |
+     |  getSimOperator(self)
+     |
+     |  getSimOperatorName(self)
+     |
+     |  getSimSerialNumber(self)
+     |
+     |  getSimState(self)
+     |
+     |  getSubscriberId(self)
+     |
+     |  getVibrateMode(self, ringer=None)
+     |
+     |  getVoiceMailAlphaTag(self)
+     |
+     |  getVoiceMailNumber(self)
+     |
+     |  launch(self, className)
+     |
+     |  log(self, message)
+     |
+     |  makeIntent(self, action, uri=None, type=None, extras=None, categories=None, packagename=None, classname=None, flags=None)
+     |
+     |  makeToast(self, message)
+     |
+     |  mediaIsPlaying(self, tag='default')
+     |
+     |  mediaPlay(self, url, tag='default', play=True)
+     |
+     |  mediaPlayClose(self, tag='default')
+     |
+     |  mediaPlayInfo(self, tag='default')
+     |
+     |  mediaPlayList(self)
+     |
+     |  mediaPlayPause(self, tag='default')
+     |
+     |  mediaPlaySeek(self, msec, tag='default')
+     |
+     |  mediaPlaySetLooping(self, enabled=True, tag='default')
+     |
+     |  mediaPlayStart(self, tag='default')
+     |
+     |  notify(self, title, message, url=None)
+     |
+     |  phoneCall(self, uri)
+     |
+     |  phoneCallNumber(self, phone_number)
+     |
+     |  phoneDial(self, uri)
+     |
+     |  phoneDialNumber(self, phone_number)
+     |
+     |  pick(self, uri)
+     |
+     |  pickContact(self)
+     |
+     |  pickPhone(self)
+     |
+     |  prefGetAll(self, filename=None)
+     |
+     |  prefGetValue(self, key, filename=None)
+     |
+     |  prefPutValue(self, key, value, filename=None)
+     |
+     |  queryAttributes(self, uri)
+     |
+     |  queryContent(self, uri, attributes=None, selection=None, selectionArgs=None, order=None)
+     |
+     |  readBatteryData(self)
+     |
+     |  readLocation(self)
+     |
+     |  readPhoneState(self)
+     |
+     |  readSensors(self)
+     |
+     |  readSignalStrengths(self)
+     |
+     |  receiveEvent(self)
+     |
+     |  recognizeSpeech(self, prompt=None, language=None,languageModel=None)
+     |
+     |  recorderCaptureVideo(self, targetPath, duration=None, recordAudio=True)
+     |
+     |  recorderStartMicrophone(self, targetPath)
+     |
+     |  recorderStartVideo(self, targetPath, duration=0, videoSize=1)
+     |
+     |  recorderStop(self)
+     |
+     |  requiredVersion(self, requiredVersion)
+     |
+     |  rpcPostEvent(self, name, data)
+     |
+     |  scanBarcode(self)
+     |
+     |  search(self, query)
+     |
+     |  sendBroadcast(self, action, uri=None, type=None, extras=None, packagename=None, classname=None)
+     |
+     |  sendBroadcastIntent(self, intent)
+     |
+     |  sendEmail(self, to, subject, body, attachmentUri=None)
+     |
+     |  sensorsGetAccuracy(self)
+     |
+     |  sensorsGetLight(self)
+     |
+     |  sensorsReadAccelerometer(self)
+     |
+     |  sensorsReadMagnetometer(self)
+     |
+     |  sensorsReadOrientation(self)
+     |
+     |  setClipboard(self, text)
+     |
+     |  setMediaVolume(self, volume)
+     |
+     |  setResultBoolean(self, resultCode, resultValue)
+
+     |
+     |  setResultBooleanArray(self, resultCode, resultValue)
+     |
+     |  setResultByte(self, resultCode, resultValue)
+     |
+     |  setResultByteArray(self, resultCode, resultValue)
+     |
+     |  setResultChar(self, resultCode, resultValue)
+     |
+     |  setResultCharArray(self, resultCode, resultValue)
+     |
+     |  setResultDouble(self, resultCode, resultValue)
+     |
+     |  setResultDoubleArray(self, resultCode, resultValue)
+     |
+     |  setResultFloat(self, resultCode, resultValue)
+     |
+     |  setResultFloatArray(self, resultCode, resultValue)
+     |
+     |  setResultInteger(self, resultCode, resultValue)
+
+     |
+     |  setResultIntegerArray(self, resultCode, resultValue)
+     |
+     |  setResultLong(self, resultCode, resultValue)
+     |
+     |  setResultLongArray(self, resultCode, resultValue)
+     |
+     |  setResultSerializable(self, resultCode, resultValue)
+     |
+     |  setResultShort(self, resultCode, resultValue)
+     |
+     |  setResultShortArray(self, resultCode, resultValue)
+     |
+     |  setResultString(self, resultCode, resultValue)
+     |
+     |  setResultStringArray(self, resultCode, resultValue)
+     |
+     |  setRingerVolume(self, volume)
+     |
+     |  setScreenBrightness(self, value)
+     |
+     |  setScreenTimeout(self, value)
+     |
+     |  smsDeleteMessage(self, id)
+     |
+     |  smsGetAttributes(self)
+     |
+     |  smsGetMessageById(self, id, attributes=None)
+     |
+     |  smsGetMessageCount(self, unreadOnly, folder='inbox')
+     |
+     |  smsGetMessageIds(self, unreadOnly, folder='inbox')
+     |
+     |  smsGetMessages(self, unreadOnly, folder='inbox', attributes=None)
+     |
+     |  smsMarkMessageRead(self, ids, read)
+     |
+     |  smsSend(self, destinationAddress, text)
+     |
+     |  startActivity(self,action,uri=None,type=None,extras=None, wait=None, packagename=None, classname=None)
+     |
+     |  startActivityForResult(self, action, uri=None, type=None, extras=None, packagename=None, classname=None)
+     |
+     |  startActivityForResultIntennt(self, intent)
+     |
+     |  startActivityIntent(self, intent, wait=None)
+     |
+     |  startEventDispatcher(self, port=None)
+     |
+     |  startInteractiveVideoRecordding(self, path)
+     |
+     |  startLocating(self, minDistance=60000, minUpdateDistance=30)
+     |
+     |  startSensing(self, sampleSize=5)
+     |
+     |  startSensingThreshold(self, sensorNumber, threshold, axis)
+     |
+     |  startSensingTimed(self, sensorNumber, delayTime)
+     |
+     |  startTrackingPhoneState(self)
+     |
+     |  startTrackingSignalStrengthhs(self)
+     |
+     |  stopEventDispatcher(self)
+     |
+     |  stopLocating(self)
+     |
+     |  stopSensing(self)
+     |
+     |  stopTrackingPhoneState(self)
+     |
+     |  stopTrackingSignalStrengthss(self)
+     |
+     |  toggleAirplaneMode(self, enabled=None)
+     |
+     |  toggleBluetoothState(self, enabled=None, prompt=True)
+     |
+     |  toggleRingerSilentMode(self, enabled=None)
+     |
+     |  toggleVibrateMode(self, enabled=None, ringer=None)
+     |
+     |  toggleWifiState(self, enabled=None)
+     |
+     |  ttsIsSpeaking(self)
+     |
+     |  ttsSpeak(self, message)
+     |
+     |  vibrate(self, duration=300)
+     |
+     |  view(self, uri, type=None, extras=None)
+     |
+     |  viewContacts(self)
+     |
+     |  viewHtml(self, path)
+     |
+     |  viewMap(self, query)
+     |
+     |  waitForEvent(self, eventName, timeout=None)
+     |
+     |  wakeLockAcquireBright(self)
+     |
+     |  wakeLockAcquireDim(self)
+     |
+     |  wakeLockAcquireFull(self)
+     |
+     |  wakeLockAcquirePartial(self)
+     |
+     |  wakeLockRelease(self)
+     |
+     |  webViewShow(self, url, wait=None)
+     |
+     |  webcamAdjustQuality(self, resolutionLevel=0, jpegQuality=20)
+     |
+     |  webcamStart(self, resolutionLevel=0, jpegQuality=20, port=0)
+     |
+     |  webcamStop(self)
+     |
+     |  wifiDisconnect(self)
+     |
+     |  wifiGetConnectionInfo(self)
+     |
+     |  wifiGetScanResults(self)
+     |
+     |  wifiLockAcquireFull(self)
+     |
+     |  wifiLockAcquireScanOnly(self)
+     |
+     |  wifiLockRelease(self)
+     |
+     |  wifiReassociate(self)
+     |
+     |  wifiReconnect(self)
+     |
+     |  wifiStartScan(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from androidhelper.sl4a.Android:
+     |
+     |  __getattr__(self, name)
+     |
+     |  __init__(self, addr=None)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from androidhelper.sl4a.Android:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FILE
+    /data/user/0/org.qpython.qpy3/files/lib/python3.6/qpyutil.zip/androidhelper/__init__.py
